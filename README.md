@@ -21,12 +21,13 @@ npm start
 
 ```
 /**
+* 询问filename之后
 * 自动生成[filename].js放在src/js下
 * 自动生成[filename].scss 和 [filename].css 在src/scss 和 src/css下
 * 自动生成[filename].html 在src/html下
 * 编译后重启工程
 */ 
-gulp add filename
+gulp add
 ```
 
 - src/html 和 src/js下的文件是一一对应关系，比如，a.html的webpack入口文件就是a.js
