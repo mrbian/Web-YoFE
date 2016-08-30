@@ -1,7 +1,7 @@
 #foreground-generator
 前端开发脚手架生成器
 
-### 前端脚手架说明
+## 前端脚手架说明
 - 使用webpack-dev-server + hot-middleware实现内存中文件热加载
 - 使用gulp实现自动化
 
@@ -39,13 +39,13 @@ gulp add filename
 
 - 修改了入口文件的js后，整个页面会自动reload，不需要F5刷新
 
-### 生成器说明
+## 生成器说明
 - 可以选择js框架使用angular1、angular2、react、vue
 - 可以选择css框架使用amazeui还是bootstrap
 - 可以选择js代码是使用ES6还是ES5
 - 自动为文件头加入作者信息和创建日期
 
-### 使用
+## 使用
 现在：
 ```
 git clone https://git.oschina.net/mrbian/foreground-generator.git
@@ -66,5 +66,5 @@ cd test
 yo foreground
 ```
 
-### 友情提示
+## 友情提示
 - 使用Webstorm将templates文件夹mark成outproject，让webstorm自动的Inspection对templates文件夹下的文件失效
