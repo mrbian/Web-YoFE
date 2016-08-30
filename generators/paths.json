@@ -24,6 +24,12 @@
     "default": ".bowerrc"
   },
   {
+    "name": ".gitignore",
+    "type": "file",
+    "desc": "gitignore config, relative to cwd",
+    "default": ".gitignore"
+  },
+  {
     "name": ".eslintrc.json",
     "type": "file",
     "desc": "eslint config, relative to cwd",
