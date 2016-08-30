@@ -1,0 +1,68 @@
+[
+  {
+    "name": "server",
+    "type": "folder",
+    "desc": "server folder, relative to cwd",
+    "default": "server"
+  },
+  {
+    "name": "src",
+    "type": "folder",
+    "desc": "srouce file folder, relative to cwd",
+    "default": "src"
+  },
+  {
+    "name" : "mock",
+    "type" : "folder",
+    "desc" : "mock data file folder,relative to cwd",
+    "default" : "mock"
+  },
+  {
+    "name": ".bowerrc",
+    "type": "file",
+    "desc": "bower config, relative to cwd",
+    "default": ".bowerrc"
+  },
+  {
+    "name": ".eslintrc.json",
+    "type": "file",
+    "desc": "eslint config, relative to cwd",
+    "default": ".eslintrc.json"
+  },
+  {
+    "name": ".eslintrc.production.json",
+    "type": "file",
+    "desc": "eslint production config, relative to cwd",
+    "default": ".eslintrc.production.json"
+  },
+  {
+    "name": "package.json",
+    "type": "file",
+    "desc": "npm config, relative to cwd",
+    "default": "package.json"
+  },
+  {
+    "name": "bower.json",
+    "type": "file",
+    "desc": "npm config, relative to cwd",
+    "default": "bower.json"
+  },
+  {
+    "name": "make-webpack.config.js",
+    "type": "file",
+    "desc": "gulp file, relative to cwd",
+    "default": "make-webpack.config.js"
+  },
+  {
+    "name": "webpack.config.js",
+    "type": "file",
+    "desc": "gulp file, relative to cwd",
+    "default": "webpack.config.js"
+  },
+  {
+    "name": "webpack-dev.config.js",
+    "type": "file",
+    "desc": "gulp file, relative to cwd",
+    "default": "webpack-dev.config.js"
+  }
+]

@@ -1,0 +1,12 @@
+*.iml
+*.ipr
+*.iws
+.idea/
+
+/node_modules
+/assets
+/.sass-cache
+./npm-debug.log
+.DS_Store
+
+./js/components

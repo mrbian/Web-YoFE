@@ -1,0 +1,29 @@
+{
+  "name": "generator-foreground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mkdir tmp && sudo npm link && cd tmp && yo foreground",
+    "start" : "mkdir tmp && sudo npm link && cd tmp && yo foreground"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/mrbian/koa-generator.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "files": [
+    "generators/app"
+  ],
+  "author": "bian",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "yeoman-assert": "^2.1.2",
+    "yeoman-generator": "^0.22.5",
+    "yeoman-test": "^1.1.0",
+    "yosay": "^1.2.0"
+  }
+}

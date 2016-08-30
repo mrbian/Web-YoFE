@@ -1,0 +1,43 @@
+{
+  "name": "<%= project %>-front",
+  "authors": [
+    "<%= author %>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/js/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0",
+    "fex-webuploader": "https://github.com/fex-team/webuploader.git#~0.1.5",
+    "jquery": "~2.1.4",
+    "jquery-validation": "https://github.com/jzaefferer/jquery-validation.git#~1.14.0",
+    <% if (frame === "React") { %>
+    "react": "^15.2.0",
+    <% } else if (frame === "Angular1"){ %>
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-animate": "~1.4.0",
+    "angular-touch": "~1.4.0",
+    "ng-file-upload": "~5.0.9",
+    <% }else if(frame === "Angular2"){ %>
+    "angular2": "2.0.0-beta.2",
+    <% }else if(frame === "Vue"){ %>
+    <% } %>
+    <% if(css === "bootstrap"){ %>
+    "bootstrap": "~3.3.6",
+    "bootstrap-sass": "boostrap-sass#~3.3.6"
+    <% }else if(css === "amazeui") { %>
+    "amazeui": "~2.4.2"
+    <% } %>
+  }
+}

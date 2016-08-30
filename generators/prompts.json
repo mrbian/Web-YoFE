@@ -1,0 +1,67 @@
+[
+  {
+    "type" : "list",
+    "name" : "frame",
+    "message": "Which kind of js frame do you want to use?",
+    "choices": [
+      {
+        "name": "React",
+        "value": "React"
+      },
+      {
+        "name": "Angular1",
+        "value": "Angular1"
+      },
+      {
+        "name" : "Angular2",
+        "value" : "Angular2"
+      },
+      {
+        "name" : "Vue",
+        "value" : "Vue"
+      }
+    ]
+  },
+  {
+    "type" : "list",
+    "name" : "css",
+    "message": "Which kind of css frame do you want to use?",
+    "choices": [
+      {
+        "name" : "amazeui",
+        "value" : "amazeui"
+      },
+      {
+        "name" : "bootstrap",
+        "value" : "bootstrap"
+      }
+    ]
+  },
+  {
+    "type" : "list",
+    "name" : "version",
+    "message": "Which version of javascript do you want to use?",
+    "choices": [
+      {
+        "value": "ES6",
+        "name": "ES6"
+      },
+      {
+        "value": "ES5",
+        "name": "ES5"
+      }
+    ]
+  },
+  {
+    "type" : "input",
+    "name" : "name",
+    "message" : "What's your name",
+    "default" : "bian"
+  },
+  {
+    "type" : "input",
+    "name" : "project",
+    "message" : "What's your project name",
+    "default" : "foreground"
+  }
+]

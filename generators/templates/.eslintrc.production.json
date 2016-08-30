@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "mocha" : true,
+    "shared-node-browser" : true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "require-yield" : [
+      "off"
+    ],
+    "no-unused-expressions" : [
+      "warn",
+      {
+        "allowShortCircuit" : true,
+        "allowTernary" : true
+      }
+    ],
+    "no-unused-vars" : [
+      "warn"
+    ],
+    "no-undef" : [
+      "warn"
+    ],
+    "no-console" : [
+      "warn"
+    ]
+  }
+}
