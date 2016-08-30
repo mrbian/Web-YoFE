@@ -9,4 +9,4 @@
 ./npm-debug.log
 .DS_Store
 
-./js/components
+./src/js/components/*
