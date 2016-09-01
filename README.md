@@ -88,3 +88,5 @@ yo foreground
 
 ## 友情提示
 - 使用Webstorm将templates文件夹mark成outproject，让webstorm自动的Inspection对templates文件夹下的文件失效
+- React框架对bower的支持不好，请引入node_modules下面的React
+- 前端所有全局通用变量如jquery,React都一定使用expose-loader给expose出来，否则在最后打包发布的时候会有问题
