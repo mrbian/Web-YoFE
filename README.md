@@ -67,7 +67,6 @@ gulp pack
 
 ## 使用
 
-如果以后npm包注册成功
 ```
 npm install -g generator-foreground
 mkdir test 
