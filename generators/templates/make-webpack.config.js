@@ -43,7 +43,7 @@ module.exports = (options) => {
 
     var debug = options.debug !== undefined ? options.debug : true;
     // 这里publicPath要使用绝对路径，不然scss/css最终生成的css图片引用路径是错误的，应该是scss-loader的bug
-    var publicPath = "/dist";
+    var publicPath = "/dist/";
     var extractCSS;
     var cssLoader;
     var sassLoader;
@@ -77,13 +77,13 @@ module.exports = (options) => {
 
     // 没有真正引用也会加载到runtime，如果没安装这些模块会导致报错，有点坑
     /*plugins.push(
-        new webpack.ProvidePlugin({
-            React: "react",
-            ReactDOM: "react-dom",
-            _: "lodash", 按需引用
-            $: "jquery"
-        })
-    )*/
+     new webpack.ProvidePlugin({
+     React: "react",
+     ReactDOM: "react-dom",
+     _: "lodash", 按需引用
+     $: "jquery"
+     })
+     )*/
 
     if(debug) {
         extractCSS = new ExtractTextPlugin("css/[name].css?[contenthash]");
@@ -125,9 +125,9 @@ module.exports = (options) => {
     }
 
     var entry = Object.assign(entries, {
-            // 用到什么公共lib（例如React.js），就把它加进vender去，目的是将公用库单独提取打包
-            "vender": ["React"]
-        });
+        // 用到什么公共lib（例如React.js），就把它加进vender去，目的是将公用库单独提取打包
+        "vender": ["React"]
+    });
 
     var config = {
         entry: entry,
@@ -212,4 +212,4 @@ module.exports = (options) => {
     }
 
     return config;
-}
+};
