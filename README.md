@@ -40,6 +40,25 @@ gulp add
 
 - 修改了入口文件的js后，整个页面会自动reload，不需要F5刷新
 
+### 发布
+有两种发布方式
+- 一 、 静态文件形式发布
+```
+gulp pack 
+```
+压缩所有的资源文件同时打包出server/views一级目录下面的html，assets/html文件夹下面得到的都是已经经过ect编译后的html  
+如果需要修改资源文件的前缀，只需要修改package.json下面的remoteServer.staticPrefix   
+
+此时assets文件夹可以直接交给后端  
+可以让后端以静态文件的形式发布  
+
+- 二、 动态渲染发布
+```
+gulp pack
+```
+压缩后，通过server动态渲染上线
+
+
 ## 生成器说明
 - 可以选择js框架使用angular1、angular2、react、vue
 - 可以选择css框架使用amazeui还是bootstrap
