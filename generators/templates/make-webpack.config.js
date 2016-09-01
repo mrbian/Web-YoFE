@@ -6,9 +6,11 @@
  */
 "use strict";
 
+// local module
 var path = require("path");
 var fs = require("fs");
 
+// library module
 var webpack = require("webpack");
 var _ = require("lodash");
 var glob = require("glob");
@@ -23,6 +25,9 @@ var srcDir = path.resolve(process.cwd(), "src");
 var assets = path.resolve(process.cwd(), "assets");
 var nodeModPath = path.resolve(__dirname, "./node_modules");
 var pathMap = require("./src/pathmap.json");
+
+var pkg = require("./package.json");
+var staticPrefix = pkg.remoteServer.staticePrefix;
 
 var entries = (() => {
     var jsDir = path.resolve(srcDir, "js");
@@ -42,8 +47,8 @@ module.exports = (options) => {
     options = options || {};
 
     var debug = options.debug !== undefined ? options.debug : true;
-    // 这里publicPath要使用绝对路径，不然scss/css最终生成的css图片引用路径是错误的，应该是scss-loader的bug
-    var publicPath = "/dist/";
+    // 这里publicPath要使用绝对路径，最后要有一个/，不然scss/css最终生成的css图片引用路径是错误的，应该是scss-loader的bug
+    var publicPath = staticPrefix;
     var extractCSS;
     var cssLoader;
     var sassLoader;
