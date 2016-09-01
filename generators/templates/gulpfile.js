@@ -5,17 +5,19 @@
  * @createDate <%= date %>
  */
 "use strict";
-
+// local module
+const fs = require("fs");
 const path = require("path");
+
+// library module
 const gulp = require("gulp");
 const cluster = require("cluster");
 const runSequence = require("run-sequence");
 const readline = require("readline");
-const fs = require("fs");
 const watch = require("gulp-watch");
 const webpack = require("webpack");
-
 const gutil = require("gulp-util");
+const ect = require("gulp-ect");
 
 var task = process.argv[2];
 var debug =  task == "dev" || task == "add";
@@ -23,54 +25,9 @@ var webpackConf = debug ? require("./webpack-dev.config") : require("./webpack.c
 var src = process.cwd() + "/src";
 var assets = process.cwd() + "/assets";
 
-/**
- * 创建队列维护webpack进程
- * @constructor
- */
-function Queue(){
-    var self = this;
-    self.length = 0;
-    self.front = 0;
-    self.rear = 0;
-    self.elem = [];
-    self.inQueue = function(ele){
-        self.elem[rear] = ele;
-        self.rear ++;
-        self.length ++;
-    };
-    self.outQueue = function(){
-        if(self.front == self.rear){
-            return;
-        }
-        self.length --;
-        self.front ++;
-        return self.elem[self.front - 1];
-    };
-    self.isEmpty = function(){
-        return self.front == self.rear;
-    };
-
-    /**
-     * 清空队列，并对每个栈顶元素执行回调函数
-     * @param callback
-     */
-    self.clearQueue = function(callback){
-        for(var idx = self.front; idx < self.rear; idx ++){
-            callback(self.outQueue());
-        }
-    };
-}
-
-var queue = new Queue();
-
-var killChildProcess = function(child){
-    child.kill();
-};
-
 // clean assets
-gulp.task("clean", () => {
+gulp.task("clean",() => {
     var clean = require("gulp-clean");
-
     return gulp.src(assets, {read: true}).pipe(clean())
 });
 
@@ -79,7 +36,12 @@ gulp.task("pack", ["clean"], (done) => {
     webpack(webpackConf, (err, stats) => {
         if(err) throw new gutil.PluginError("webpack", err);
         gutil.log("[webpack]", stats.toString({colors: true}));
-        done()
+        gulp.src("./server/views/*.html")
+            .pipe(ect({
+                ext : ".html"
+            }))
+            .pipe(gulp.dest("./assets"));
+        done();
     });
 });
 
@@ -172,7 +134,7 @@ gulp.task("add",function(done){
         input : process.stdin,
         output : process.stdout
     });
-    
+
     rl.question("Please input the page name you want to create: \r\n",(answer) => {
         if(! answer) return;
         var filename = answer.trim();
@@ -243,6 +205,7 @@ gulp.task("dev-build",["clean"],function(done){
         done();
     })
 });
+
 // js check 暂时不用
 // gulp.task("hint", () => {
 //     var jshint = require("gulp-jshint")
