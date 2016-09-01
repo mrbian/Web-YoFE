@@ -66,17 +66,6 @@ gulp pack
 - 自动为文件头加入作者信息和创建日期
 
 ## 使用
-现在：
-```
-git clone https://git.oschina.net/mrbian/foreground-generator.git
-cd foreground-generator
-npm link
-
-// change directory
-mkdir app
-cd app
-yo foreground
-```
 
 如果以后npm包注册成功
 ```
